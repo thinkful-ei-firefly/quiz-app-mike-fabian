@@ -5,7 +5,7 @@ console.log(questions);
 
 function firstLoad(){
 	$('.main').html(`<h2>Welcome</h2>
-  		<button>Start</button>`);
+  		<button class="startButton">Start</button>`);
 }
 
 
@@ -29,9 +29,13 @@ function loadQuestion(numberQuestion){
   </form>`);
 }
 
+$('.main').on('click', '.startButton', event => {
+	$(loadQuestion(0));
+	//alert("hello");
+});
 
-
-$(loadQuestion(0));
+$(firstLoad);
+//$(loadQuestion(0));
 
 
 
