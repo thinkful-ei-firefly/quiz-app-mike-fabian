@@ -21,6 +21,7 @@ function loadQuestion(numberQuestion){
   $('.main').html(`<form action="#" method="post">
   <img src="${questions[numberQuestion]['img']}">
   <progress value="${numberQuestion + 1}" max="10"></progress>
+  <p class="progressText">Progress: ${numberQuestion + 1}/10</p>
   <h2>${questions[numberQuestion]['question']}</h2>
   <input id="option1" type="radio" name="option" value="${questions[numberQuestion]['options'][0]}">${questions[numberQuestion]['options'][0]}</input>
   <input id="option2" type="radio" name="option" value="${questions[numberQuestion]['options'][1]}">${questions[numberQuestion]['options'][1]}</input>
