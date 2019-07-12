@@ -21,20 +21,67 @@ function loadQuestion(numberQuestion){
   <img src="${questions[numberQuestion]['img']}">
   <progress value="${numberQuestion + 1}" max="10"></progress>
   <h2>${questions[numberQuestion]['question']}</h2>
-  <input id="option1" type="radio" name="option" value="Option 1">${questions[numberQuestion]['options'][0]}</input>
-  <input id="option2" type="radio" name="option" value="Option 2">${questions[numberQuestion]['options'][1]}</input>
-  <input type="radio" name="option" value="Option 3">${questions[numberQuestion]['options'][2]}</input>
-  <input type="radio" name="option" value="Option 4">${questions[numberQuestion]['options'][3]}</input>
-  <button>Submit</button>
+  <input id="option1" type="radio" name="option" value="${questions[numberQuestion]['options'][0]}">${questions[numberQuestion]['options'][0]}</input>
+  <input id="option2" type="radio" name="option" value="${questions[numberQuestion]['options'][1]}">${questions[numberQuestion]['options'][1]}</input>
+  <input type="radio" name="option" value="${questions[numberQuestion]['options'][2]}">${questions[numberQuestion]['options'][2]}</input>
+  <input type="radio" name="option" value="${questions[numberQuestion]['options'][3]}">${questions[numberQuestion]['options'][3]}</input>
+  <button type="submit" class="submitButton">Submit</button>
   </form>`);
 }
 
-$('.main').on('click', '.startButton', event => {
-	$(loadQuestion(0));
-	//alert("hello");
-});
+function buttonActions(){
+	let currentQuestion = 0;
+	$('.main').on('click', '.startButton', event => {
+		$(loadQuestion(currentQuestion));
+		//alert("hello");
+	});
+
+	$('.main').on('click', '.submitButton', event => {
+    //alert("hello");
+    event.preventDefault();
+    let answerChecked = $('input[name=option]:checked').val();
+    let totalRight = 0;
+    let totalWrong = 0;
+    console.log($('input[name=option]:checked').val());
+    if (questions[currentQuestion]['answer'] === answerChecked){
+      totalRight++;
+      showRightAnswer(totalRight, totalWrong);
+    }else{
+      totalWrong++;
+      showWrongAnswer(totalRight, totalWrong, questions[currentQuestion]['answer']);
+    }
+    
+		//$(loadQuestion(currentQuestion));
+		//currentQuestion++;
+	});
+}
+
+function showRightAnswer(totalRight, totalWrong){
+  $('.main').html(`<h4>You did a good job</h4>
+    <p>Score:</p>
+    <p>Right: ${totalRight}</p>
+    <p>Wrong: ${totalWrong}</p>
+    <button class="nextButton">Next</button>`);
+}
+
+function showWrongAnswer(totalRight, totalWrong, answer){
+  $('.main').html(`<h4>Oh no! You chose the wrong answer</h4>
+    <p>The correct Answer is: ${answer}</p>
+    <p>Score:</p>
+    <p>Right: ${totalRight}</p>
+    <p>Wrong: ${totalWrong}</p>
+    <button>Next</button>`);
+}
+
+/*$('.main').html(`<h4>You did a good job</h4>
+    <p>Score:</p>
+    <p>Right: 4</p>
+    <p>Wrong: 3</p>
+    <button class="nextButton">Next</button>`);*/
+
 
 $(firstLoad);
+$(buttonActions);
 //$(loadQuestion(0));
 
 
