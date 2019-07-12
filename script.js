@@ -4,7 +4,7 @@ console.log(questions);
 
 
 function firstLoad(){
-	$('.main').html(`<h2>Welcome</h2>
+  $('.main').html(`<h2>Welcome</h2>
   		<button class="startButton">Start</button>`);
 }
 
@@ -16,6 +16,7 @@ function firstLoad(){
  * 
  */
 function loadQuestion(numberQuestion){
+  console.log(numberQuestion);
   console.log(questions[numberQuestion]);
   $('.main').html(`<form action="#" method="post">
   <img src="${questions[numberQuestion]['img']}">
@@ -30,30 +31,51 @@ function loadQuestion(numberQuestion){
 }
 
 function buttonActions(){
-	let currentQuestion = 0;
-	$('.main').on('click', '.startButton', event => {
-		$(loadQuestion(currentQuestion));
-		//alert("hello");
-	});
+  let currentQuestion = 0;
+  let totalRight = 0;
+  let totalWrong = 0;
+  $('.main').on('click', '.startButton', event => {
+    $(loadQuestion(currentQuestion));
+  });
 
-	$('.main').on('click', '.submitButton', event => {
-    //alert("hello");
+  $('.main').on('click', '.nextButton', event => {
+    if (currentQuestion < 9) {
+      currentQuestion++;
+      $(loadQuestion(currentQuestion));
+    } else {
+      $('.main').html(`
+      <h1>You're done!</h1>
+      <p>Right: ${totalRight}</p>
+      <p>Wrong: ${totalWrong}</p>
+      <button class="playAgainButton">Play again?</button>
+      `);
+    }
+  });
+  
+  $('.main').on('click', '.playAgainButton', event => {
+    currentQuestion = 0;
+    totalRight = 0;
+    totalWrong = 0;
+    firstLoad();
+  });
+
+  $('.main').on('click', '.submitButton', event => {
     event.preventDefault();
     let answerChecked = $('input[name=option]:checked').val();
-    let totalRight = 0;
-    let totalWrong = 0;
-    console.log($('input[name=option]:checked').val());
-    if (questions[currentQuestion]['answer'] === answerChecked){
-      totalRight++;
-      showRightAnswer(totalRight, totalWrong);
-    }else{
-      totalWrong++;
-      showWrongAnswer(totalRight, totalWrong, questions[currentQuestion]['answer']);
+    if (answerChecked) {
+      if (questions[currentQuestion]['answer'] === answerChecked){
+        totalRight++;
+        showRightAnswer(totalRight, totalWrong);
+      }else{
+        totalWrong++;
+        showWrongAnswer(totalRight, totalWrong, questions[currentQuestion]['answer']);
+      }
+    } else {
+      alert('Must select an option!');
     }
-    
-		//$(loadQuestion(currentQuestion));
-		//currentQuestion++;
-	});
+  });
+
+  
 }
 
 function showRightAnswer(totalRight, totalWrong){
@@ -70,8 +92,11 @@ function showWrongAnswer(totalRight, totalWrong, answer){
     <p>Score:</p>
     <p>Right: ${totalRight}</p>
     <p>Wrong: ${totalWrong}</p>
-    <button>Next</button>`);
+    <button class="nextButton">Next</button>`);
 }
+
+
+
 
 /*$('.main').html(`<h4>You did a good job</h4>
     <p>Score:</p>

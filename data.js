@@ -1,5 +1,4 @@
 'use strict';
-
 const questions = [
   {question: 'What is a baby seal called?',
     options: ['pup', 'guppy', 'cub', 'corki'],
