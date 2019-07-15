@@ -26,6 +26,12 @@ main {
   background-color: blue;
 }
 
+.big {
+    display:block;
+    width:100%;
+    cursor:pointer;
+}
+
 p {
   color: #ffffff;
 }
