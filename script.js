@@ -7,13 +7,14 @@ Test your knowledge and see how you measure up!</p>
   		<button class="startButton">Start</button></div>`);
 }
 
-function loadQuestion(numberQuestion){
+function loadQuestion(numberQuestion, right, wrong){
   console.log(numberQuestion);
   console.log(questions[numberQuestion]);
   $('.main').html(`<div class="mainContent"><form action="#" method="post">
   <div class="imageContent"><img src="${questions[numberQuestion]['img']}" alt="${questions[numberQuestion]['alt']}"></div>
   <progress  class="progressBar" value="${numberQuestion + 1}" max="10"></progress>
   <p class="progressText">Progress: ${numberQuestion + 1}/10</p>
+  <p class="progressText">Right: ${right} / Wrong: ${wrong}</p>
   <h2>${questions[numberQuestion]['question']}</h2>
   <div class="optionsQuestion">
   <div class="inputClass"><label class="big"><input type="radio" id="option1" name="option" value="${questions[numberQuestion]['options'][0]}"></input>${questions[numberQuestion]['options'][0]}</label></div>
@@ -30,13 +31,13 @@ function buttonActions(){
   let totalRight = 0;
   let totalWrong = 0;
   $('.main').on('click', '.startButton', event => {
-    $(loadQuestion(currentQuestion));
+    $(loadQuestion(currentQuestion, totalRight, totalWrong));
   });
 
   $('.main').on('click', '.nextButton', event => {
     if (currentQuestion < 9) {
       currentQuestion++;
-      $(loadQuestion(currentQuestion));
+      $(loadQuestion(currentQuestion, totalRight, totalWrong));
     } else {
       $('.main').html(`<div class="mainContent endScreen">
       <h1>You're done!</h1>
