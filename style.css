@@ -10,6 +10,14 @@ main {
     margin-top:50px;
 }
 
+.optionsQuestion{
+    text-align: left;
+}
+
+.inputClass{
+    background-color: gray;
+}
+
 p {
   color: #ffffff;
 }

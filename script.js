@@ -25,10 +25,12 @@ function loadQuestion(numberQuestion){
   <progress  class="progressBar" value="${numberQuestion + 1}" max="10"></progress>
   <p class="progressText">Progress: ${numberQuestion + 1}/10</p>
   <h2>${questions[numberQuestion]['question']}</h2>
-  <input id="option1" type="radio" name="option" value="${questions[numberQuestion]['options'][0]}">${questions[numberQuestion]['options'][0]}</input>
-  <input id="option2" type="radio" name="option" value="${questions[numberQuestion]['options'][1]}">${questions[numberQuestion]['options'][1]}</input>
-  <input type="radio" name="option" value="${questions[numberQuestion]['options'][2]}">${questions[numberQuestion]['options'][2]}</input>
-  <input type="radio" name="option" value="${questions[numberQuestion]['options'][3]}">${questions[numberQuestion]['options'][3]}</input>
+  <div class="optionsQuestion">
+  <div class="inputClass"><input type="radio" id="option1" name="option" value="${questions[numberQuestion]['options'][0]}"></input><label for="option1">${questions[numberQuestion]['options'][0]}</label></div>
+  <div class="inputClass"><input type="radio" id="option2" name="option" value="${questions[numberQuestion]['options'][1]}"></input><label for="option2">${questions[numberQuestion]['options'][1]}</label></div>
+  <div class="inputClass"><input type="radio" id="option3" name="option" value="${questions[numberQuestion]['options'][2]}"></input><label for="option3">${questions[numberQuestion]['options'][2]}</label></div>
+  <div class="inputClass"><input type="radio" id="option4" name="option" value="${questions[numberQuestion]['options'][3]}"></input><label for="option4">${questions[numberQuestion]['options'][3]}</label></div>
+  </div>
   <button type="submit" class="submitButton">Submit</button>
   </form></div>`);
 }
