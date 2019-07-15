@@ -1,15 +1,53 @@
+﻿* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: gray;
+}
+
+main {
+    margin-top:50px;
+}
+
 .mainContent {
-  text-align: center;
+    padding: 40px;
+    text-align: center;
+    background-color: white;
+}
+
+.welcomeStyle{
+    font-size: 75px;
 }
 
 img {
-  max-width: 550;
-  max-height: 275;
+    max-width: 550;
+    max-height: 275;
 }
 
 button {
-  display: block;
-  margin: 30px auto 0 auto;
+    display: block;
+    margin: 30px auto 0px auto;
+    padding: 15px 32px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+button:hover {
+    background-color: #3e8e41
+}
+
+button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 .progressBar {

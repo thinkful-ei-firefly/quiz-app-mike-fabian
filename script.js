@@ -1,10 +1,12 @@
-'use strict';
+﻿'use strict';
 console.log(questions);
 
 
 
 function firstLoad(){
-  $('.main').html(`<div class="mainContent"><h2>Welcome</h2>
+  $('.main').html(`<div class="mainContent"><h2 class="welcomeStyle">Welcome</h2><p>Welcome!
+This is a general knowledge trivia quiz covering a variety of random topics.
+Test your knowledge and see how you measure up!</p>
   		<button class="startButton">Start</button></div>`);
 }
 
