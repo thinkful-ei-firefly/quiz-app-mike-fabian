@@ -48,7 +48,7 @@ function buttonActions(){
       currentQuestion++;
       $(loadQuestion(currentQuestion));
     } else {
-      $('.main').html(`<div class="mainContent">
+      $('.main').html(`<div class="mainContent endScreen">
       <h1>You're done!</h1>
       <p>Right: ${totalRight}</p>
       <p>Wrong: ${totalWrong}</p>
@@ -84,7 +84,7 @@ function buttonActions(){
 }
 
 function showRightAnswer(totalRight, totalWrong){
-  $('.main').html(`<div class="mainContent"><h4>You did a good job</h4>
+  $('.main').html(`<div class="mainContent right"><h4>You did a good job</h4>
     <p>Score:</p>
     <p>Right: ${totalRight}</p>
     <p>Wrong: ${totalWrong}</p>
@@ -92,7 +92,7 @@ function showRightAnswer(totalRight, totalWrong){
 }
 
 function showWrongAnswer(totalRight, totalWrong, answer){
-  $('.main').html(`<div class="mainContent"><h4>Oh no! You chose the wrong answer</h4>
+  $('.main').html(`<div class="mainContent wrong"><h4>Oh no! You chose the wrong answer</h4>
     <p>The correct Answer is: ${answer}</p>
     <p>Score:</p>
     <p>Right: ${totalRight}</p>
