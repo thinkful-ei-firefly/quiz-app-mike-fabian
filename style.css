@@ -12,10 +12,18 @@ main {
 
 .optionsQuestion{
     text-align: left;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .inputClass{
     margin-top: 10px;
+    border: 10px;
+    padding: 10px;
+}
+
+.inputClass:hover {
+  background-color: blue;
 }
 
 p {
