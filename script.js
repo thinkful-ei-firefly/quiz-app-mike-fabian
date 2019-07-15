@@ -43,7 +43,7 @@ function buttonActions(){
       <h1>You're done!</h1>
       <p>Right: ${totalRight}</p>
       <p>Wrong: ${totalWrong}</p>
-      <button class="playAgainButton">Play again?</button>
+      <button class="playAgainButton" tabindex="0">Play again?</button>
       </div>`);
     }
   });
@@ -77,7 +77,7 @@ function showRightAnswer(totalRight, totalWrong){
     <p>Score:</p>
     <p>Right: ${totalRight}</p>
     <p>Wrong: ${totalWrong}</p>
-    <button class="nextButton">Next</button></div>`);
+    <button class="nextButton" tabindex="0">Next</button></div>`);
 }
 
 function showWrongAnswer(totalRight, totalWrong, answer){
