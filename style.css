@@ -15,7 +15,7 @@ main {
 }
 
 .inputClass{
-    background-color: gray;
+    margin-top: 10px;
 }
 
 p {
@@ -72,8 +72,8 @@ input {
   -moz-appearance: none;
   appearance: none;
   border-radius: 50%;
-  width: 16px;
-  height: 16px;
+  width: 13px;
+  height: 13px;
   border: 2px solid #48ed36;
   transition: 0.2s all linear;
   outline: none;
@@ -83,6 +83,7 @@ input {
 }
 
 input:checked {
-  border: 9px solid #ff7607;
+  border: 7px solid #ff7607;
+  box-shadow: 0pt 0pt 2pt 1.5pt red;
 }
 
