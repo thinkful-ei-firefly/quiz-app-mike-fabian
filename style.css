@@ -3,17 +3,20 @@
 }
 
 body{
-    background-color: gray;
+  background-image: linear-gradient(to right, #3ab5b0 0%, #3d99be 31%, #56317a 100%);
 }
 
 main {
     margin-top:50px;
 }
 
+p {
+  color: #ffffff;
+}
+
 .mainContent {
     padding: 40px;
     text-align: center;
-    background-color: white;
 }
 
 .welcomeStyle{
@@ -37,7 +40,7 @@ button {
     background-color: #4CAF50;
     border: none;
     border-radius: 15px;
-    box-shadow: 0 9px #999;
+    box-shadow: 0 9px #383838;
 }
 
 button:hover {
