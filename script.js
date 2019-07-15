@@ -21,7 +21,7 @@ function loadQuestion(numberQuestion){
   console.log(numberQuestion);
   console.log(questions[numberQuestion]);
   $('.main').html(`<div class="mainContent"><form action="#" method="post">
-  <img src="${questions[numberQuestion]['img']}">
+  <div class="imageContent"><img src="${questions[numberQuestion]['img']}"></div>
   <progress  class="progressBar" value="${numberQuestion + 1}" max="10"></progress>
   <p class="progressText">Progress: ${numberQuestion + 1}/10</p>
   <h2>${questions[numberQuestion]['question']}</h2>
