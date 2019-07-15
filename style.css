@@ -96,7 +96,7 @@ input:checked {
 }
 
 progress {
-    width: 80%;
+    width: 85%;
     height: 20px;
     display: block;
     -webkit-appearance: none;
@@ -143,4 +143,16 @@ progress::-webkit-progress-value {
 
 .endScreen {
   font-size: 40px;
+}
+
+@media screen and (min-width: 800px) {
+  .imageContent{
+      width: 45%;
+      margin: 0 auto;
+  }
+
+  progress {
+      width: 40%;
+  }
+
 }
