@@ -4,8 +4,8 @@ console.log(questions);
 
 
 function firstLoad(){
-  $('.main').html(`<h2>Welcome</h2>
-  		<button class="startButton">Start</button>`);
+  $('.main').html(`<div class="mainContent"><h2>Welcome</h2>
+  		<button class="startButton">Start</button></div>`);
 }
 
 
@@ -18,9 +18,9 @@ function firstLoad(){
 function loadQuestion(numberQuestion){
   console.log(numberQuestion);
   console.log(questions[numberQuestion]);
-  $('.main').html(`<form action="#" method="post">
+  $('.main').html(`<div class="mainContent"><form action="#" method="post">
   <img src="${questions[numberQuestion]['img']}">
-  <progress value="${numberQuestion + 1}" max="10"></progress>
+  <progress  class="progressBar" value="${numberQuestion + 1}" max="10"></progress>
   <p class="progressText">Progress: ${numberQuestion + 1}/10</p>
   <h2>${questions[numberQuestion]['question']}</h2>
   <input id="option1" type="radio" name="option" value="${questions[numberQuestion]['options'][0]}">${questions[numberQuestion]['options'][0]}</input>
@@ -28,7 +28,7 @@ function loadQuestion(numberQuestion){
   <input type="radio" name="option" value="${questions[numberQuestion]['options'][2]}">${questions[numberQuestion]['options'][2]}</input>
   <input type="radio" name="option" value="${questions[numberQuestion]['options'][3]}">${questions[numberQuestion]['options'][3]}</input>
   <button type="submit" class="submitButton">Submit</button>
-  </form>`);
+  </form></div>`);
 }
 
 function buttonActions(){
@@ -44,12 +44,12 @@ function buttonActions(){
       currentQuestion++;
       $(loadQuestion(currentQuestion));
     } else {
-      $('.main').html(`
+      $('.main').html(`<div class="mainContent">
       <h1>You're done!</h1>
       <p>Right: ${totalRight}</p>
       <p>Wrong: ${totalWrong}</p>
       <button class="playAgainButton">Play again?</button>
-      `);
+      </div>`);
     }
   });
   
@@ -80,20 +80,20 @@ function buttonActions(){
 }
 
 function showRightAnswer(totalRight, totalWrong){
-  $('.main').html(`<h4>You did a good job</h4>
+  $('.main').html(`<div class="mainContent"><h4>You did a good job</h4>
     <p>Score:</p>
     <p>Right: ${totalRight}</p>
     <p>Wrong: ${totalWrong}</p>
-    <button class="nextButton">Next</button>`);
+    <button class="nextButton">Next</button></div>`);
 }
 
 function showWrongAnswer(totalRight, totalWrong, answer){
-  $('.main').html(`<h4>Oh no! You chose the wrong answer</h4>
+  $('.main').html(`<div class="mainContent"><h4>Oh no! You chose the wrong answer</h4>
     <p>The correct Answer is: ${answer}</p>
     <p>Score:</p>
     <p>Right: ${totalRight}</p>
     <p>Wrong: ${totalWrong}</p>
-    <button class="nextButton">Next</button>`);
+    <button class="nextButton">Next</button></div>`);
 }
 
 

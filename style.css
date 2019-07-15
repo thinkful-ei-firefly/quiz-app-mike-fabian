@@ -1,0 +1,18 @@
+.mainContent {
+  text-align: center;
+}
+
+img {
+  max-width: 550;
+  max-height: 275;
+}
+
+button {
+  display: block;
+  margin: 30px auto 0 auto;
+}
+
+.progressBar {
+  display: block;
+  margin: 30px auto 0 auto;
+}
