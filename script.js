@@ -1,7 +1,4 @@
 ﻿'use strict';
-console.log(questions);
-
-
 
 function firstLoad(){
   $('.main').html(`<div class="mainContent"><h2 class="welcomeStyle">Welcome</h2><p>Welcome!
@@ -10,17 +7,10 @@ Test your knowledge and see how you measure up!</p>
   		<button class="startButton">Start</button></div>`);
 }
 
-
-
-/**
- * Take question from data.js
- * Use .html() to place it on the DOM
- * 
- */
 function loadQuestion(numberQuestion){
   console.log(numberQuestion);
   console.log(questions[numberQuestion]);
-  $('.main').html(`<div class="mainContent"><form action="#" method="post">
+  $('.main').html(`<div class="mainContent"><form role="form" action="#" method="post">
   <div class="imageContent"><img src="${questions[numberQuestion]['img']}"></div>
   <progress  class="progressBar" value="${numberQuestion + 1}" max="10"></progress>
   <p class="progressText">Progress: ${numberQuestion + 1}/10</p>
@@ -79,8 +69,6 @@ function buttonActions(){
       alert('Must select an option!');
     }
   });
-
-  
 }
 
 function showRightAnswer(totalRight, totalWrong){
@@ -100,31 +88,5 @@ function showWrongAnswer(totalRight, totalWrong, answer){
     <button class="nextButton">Next</button></div>`);
 }
 
-
-
-
-/*$('.main').html(`<h4>You did a good job</h4>
-    <p>Score:</p>
-    <p>Right: 4</p>
-    <p>Wrong: 3</p>
-    <button class="nextButton">Next</button>`);*/
-
-
 $(firstLoad);
 $(buttonActions);
-//$(loadQuestion(0));
-
-
-
-// `<form action="#" method="post">
-// <img src="https://static.boredpanda.com/blog/wp-content/uploads/2016/11/cute-baby-seal-waves-photographer-alexey-trofimov-russia-fb__700-png.jpg" alt="a beautiful baby seal">
-// <progress value="3" max="5"></progress>
-// <h2>Question 1</h2>
-// <label for="option1">A</label>
-// <input id="option1" type="radio" name="option" value="Option 1">Option</input>
-// <label for="option2">A</label>
-// <input id="option2" type="radio" name="option" value="Option 2">Option2</input>
-// <input type="radio" name="option" value="Option 3">Option3</input>
-// <input type="radio" name="option" value="Option 4">Option4</input>
-// <button>Submit</button>
-// </form>`
